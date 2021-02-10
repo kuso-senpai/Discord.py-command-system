@@ -114,9 +114,9 @@ von einem Befehl enthalten ist. Wenn ja, wird dann die `main` Funktion aufgerufe
 
 ## Dateien/Ordner Erklärung
 
-### `root/`
+### `/`
 
-Der Ornder in dem das hier alles drinnen ist
+Der Ordner in dem das hier alles drinnen ist
 
 #### `index.py`
 
