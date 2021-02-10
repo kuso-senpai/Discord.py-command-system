@@ -114,37 +114,37 @@ von einem Befehl enthalten ist. Wenn ja, wird dann die `main` Funktion aufgerufe
 
 ## Dateien/Ordner Erklärung
 
-### Root
+### `root/`
 
 Der Ornder in dem das hier alles drinnen ist
 
-#### index.py
+#### `index.py`
 
 Die Datei in dem der Hauptcode vom Bot ist, der zuallererst ausgeführt wird und alles regelt
 
-#### config.py
+#### `config.py`
 
 Hier sind alle Einstellungen wie die Farbe der Embeds, der Prefix und der Token drinnen
 
-#### REAME.md
+#### `REAME.md`
 
 Das ist das hier was du gerade liest. Diese Datei ist auch nicht relevant für den Bot, sie ist nur für Github wichtig
 
-### commands
+### `/commands/`
 
 Das hier ist der Ordner mit den Befehlsdateien. Hier dürfen **nur** Dateien bei denen das Befehlsformat ist drinnen sein
 
-### Docs
+### `/docs/`
 
 Das ist nur ein Ordner für Github mit Zeugs wie Bildern, etc. drinnen, der ist nicht für den Bot relevant, der kann gelöscht werden
 
 
-### modules
+### `/modules/`
 
 Hier sind alle Module drinnen, die genutzt werden sollen/können
 
 Der Ordner ist einfach nur zur Übersicht da, damit der root Ordner nicht vollgefüllt ist mit irgendwelchen python Modulen
 
-#### botCommands.py
+#### `botCommands.py`
 
 Das ist die Datei, die die Befehle verarbeitet, sucht und so. Die Datei ist **wichtig** für den Bot, daher nicht löschen solange kein anderes Commandsystem vorliegt
