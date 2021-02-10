@@ -8,7 +8,7 @@ Ein Befehl ist wie folgt aufgebaut:
 
 ```python
 async def main(message, args, client):
-    # Your command code
+    # Command code hier
 name = "Command Name"
 desc = "Die Beschreibung vom Befehl"
 usage = "Die (Benutzung) [von dem Command]"
