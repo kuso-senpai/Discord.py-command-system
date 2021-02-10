@@ -1,4 +1,5 @@
 def getCommands(debugPrint = False):
+    """Findet alle Befehle in dem `/commands/` Ordner, importiert diese und gibt ein Array mit allen Commands zurück"""
     # Alle Datei Befehle in einem Array
     commandFiles = []
 
@@ -22,3 +23,10 @@ def getCommands(debugPrint = False):
         _commands.append(c)     # Fügt Befehlobjekt zum Array
 
     return _commands
+
+
+def findCommand(s: str):
+    """Findet ein Befehl per Namen/Alias"""
+    for c in getCommands():
+        if s.lower() == c.name.lower() or s.lower() in map(lambda x: x.lower(), c.alias):
+            return c

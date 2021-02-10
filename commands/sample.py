@@ -9,7 +9,9 @@ async def main(message: discord.Message, args: List[str], client: discord.Client
 
 
 #region commandInfos needed
-name = "sampleCommand"                                          # Name of the command
-desc = "This is a Sample Command"                               # Description of the command
+name = "sampleCommand"                                          # Name
+desc = "This is a Sample Command"                               # Beschreibung
 alias = ["sc"]                                                  # Alias
+usage = "sampleCommand"                                         # Benutzung
+examples = ["sc"]                                               # Beispiele
 #endregion
