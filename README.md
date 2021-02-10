@@ -97,12 +97,12 @@ Ein _help_ Befehl ist schon erstellt
 
 Mit  `help Befehl` werden die Infos über einen Befehl gesendet
 
-![alt text](https://github.com/kuso-senpai/Discord.py-command-system/blob/master/help_command.png?raw=true)
+![alt text](https://github.com/kuso-senpai/Discord.py-command-system/blob/master/docs/help_command.png?raw=true)
 
 
 Mit `help` werden dann einfach alle Befehle angezeigt
 
-![alt text](https://github.com/kuso-senpai/Discord.py-command-system/blob/master/help.png?raw=true)
+![alt text](https://github.com/kuso-senpai/Discord.py-command-system/blob/master/docs/help.png?raw=true)
 
 ## Wie der Hase läuft
 
