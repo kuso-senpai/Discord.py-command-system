@@ -1,15 +1,15 @@
 #region imports
 from typing import List
 import discord
-from config import color, prefix
+from config import prefix, color
 from modules.botCommands import getCommands, findCommand
 #endregion
 
 async def main(message: discord.Message, args: List[str], client: discord.Client):
 
     if(len(args) < 1):
-        helpEmbed = discord.Embed()
-        helpEmbed.set_author(name="Help", url=client.user.avatar_url)
+        helpEmbed = discord.Embed(description=f"```css\nPrefix: {prefix}```")
+        helpEmbed.set_author(name=f"Hilfe für {client.user.name}", icon_url=client.user.avatar_url)
 
         for c in getCommands():
             helpEmbed.add_field(name=c.name, value=c.desc, inline=False)
@@ -36,8 +36,8 @@ async def main(message: discord.Message, args: List[str], client: discord.Client
 
 #region commandInfos needed
 name = "help"                                                 # Command name
-desc = "Help with all commands"                               # Beschreibung
+desc = "Die Befehlshilfe"                                     # Beschreibung
 usage = "help (Befehl)"                                       # Benutzung
-alias = ["?"]                                                 # Alias
+alias = ["?", "hilfe"]                                        # Alias
 examples = ["help", "help sample"]                            # Beispiele
 #endregion

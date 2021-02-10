@@ -2,7 +2,23 @@
 Simples Command System für Discord.py
 
 ## wIe FuNkTiOnIeRt DaS??
+
+### Setup
+
+Bevor überhaupt etwas funktioniert, musst du erstmal einen Bot erstellen auf [Der Discord Developers Seite](https://discord.com/developers)
+
+Dort machst du dann alles was du brauchst, lädst den Bot auf einen Server ein und kopierst dann das Token
+
+Das Token fügst du dann in `config.py` bei `token = ""` zwischen die `"` ein.
+
+
+
+### Übersicht über den Bot
+
 Alle Befehle sind in dem `/commands/` Ordner
+
+
+Der Bot reagiert auf das Prefix in `config.py` und auf den Benutzer Ping (@Bot)
 
 Ein Befehl ist wie folgt aufgebaut:
 
@@ -19,7 +35,7 @@ alias = ["commandAlias", "commandAlias2"]
 Für mehr Infos, einfach `/commands/sample.py` angucken
 
 
-### Update - Befehl erstellen per Command Line
+### Befehl erstellen per Command Line
 
 Man kann jetzt einen Befehl einfach erstellen in CMD/Powershell/Terminal:
 
@@ -72,17 +88,63 @@ examples = ["sc"]                                               # Beispiele
 ```
 
 
+Den Bot kann etweder mit `python index.py` gestartet werden oder mit `/tools/run.bat`
+
 
 ## Help command
 
 Ein _help_ Befehl ist schon erstellt
 
-Durch `help Befehl` werden die Infos über einen Befehl gesendet
+Mit  `help Befehl` werden die Infos über einen Befehl gesendet
+
+![alt text](https://github.com/kuso-senpai/Discord.py-command-system/blob/master/help_command.png?raw=true)
+
 
 Mit `help` werden dann einfach alle Befehle angezeigt
+
+![alt text](https://github.com/kuso-senpai/Discord.py-command-system/blob/master/help.png?raw=true)
 
 ## Wie der Hase läuft
 
 Das meiste findet in `/modules/botCommands.py` statt. Dort wird einfach durch jede Datei im `/commands` Ordner durchgeguckt.
 Es wird dann überprüft, ob der Command Name dem entspricht was gesendet wurde, oder ob das was gesendet wurde in den Aliasen
 von einem Befehl enthalten ist. Wenn ja, wird dann die `main` Funktion aufgerufen und der Code ausgeführt.
+
+
+
+## Dateien/Ordner Erklärung
+
+### Root
+
+Der Ornder in dem das hier alles drinnen ist
+
+#### index.py
+
+Die Datei in dem der Hauptcode vom Bot ist, der zuallererst ausgeführt wird und alles regelt
+
+#### config.py
+
+Hier sind alle Einstellungen wie die Farbe der Embeds, der Prefix und der Token drinnen
+
+#### REAME.md
+
+Das ist das hier was du gerade liest. Diese Datei ist auch nicht relevant für den Bot, sie ist nur für Github wichtig
+
+### commands
+
+Das hier ist der Ordner mit den Befehlsdateien. Hier dürfen **nur** Dateien bei denen das Befehlsformat ist drinnen sein
+
+### Docs
+
+Das ist nur ein Ordner für Github mit Zeugs wie Bildern, etc. drinnen, der ist nicht für den Bot relevant, der kann gelöscht werden
+
+
+### modules
+
+Hier sind alle Module drinnen, die genutzt werden sollen/können
+
+Der Ordner ist einfach nur zur Übersicht da, damit der root Ordner nicht vollgefüllt ist mit irgendwelchen python Modulen
+
+#### botCommands.py
+
+Das ist die Datei, die die Befehle verarbeitet, sucht und so. Die Datei ist **wichtig** für den Bot, daher nicht löschen solange kein anderes Commandsystem vorliegt

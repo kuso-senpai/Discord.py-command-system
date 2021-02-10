@@ -1,3 +1,8 @@
+"""
+Die Index Datei die als erstes ausgeführt wird
+"""
+
+
 #region imports
 import discord
 from config import token, prefix
@@ -13,11 +18,15 @@ async def on_ready():
 
 @client.event
 async def on_message(message: discord.Message):
+    if(not message.content.startswith(prefix) and not message.content.startswith(f'<@!{client.user.id}>') and not message.content.startswith(f'<@{client.user.id}>')):
+        return
+
+
     #region command Values
-    command = message.content.replace(prefix, "", len(prefix))
-    command = command.split()[0]
-    args = message.content.split()
-    del args[0]
+    messageWithoutPrefix: str = message.content.replace(prefix, "", len(prefix)).replace(f'<@!{client.user.id}> ', "", len(f'<@!{client.user.id}> ')).replace(f'<@{client.user.id}> ', "", len(f'<@{client.user.id}> '))
+    command = messageWithoutPrefix
+    command = command.split()[0] if len(command.split()) > 0 else command
+    args = messageWithoutPrefix.split()[1:]
     #endregion
 
     from modules.botCommands import getCommands
@@ -27,8 +36,8 @@ async def on_message(message: discord.Message):
                 await c.main(message, args, client)
             except Exception as ex:
                 print(ex)
-                message.channel.send(embed=discord.Embed(title="Error", description=f"Sorry, but an error occured!", color=0xFF0000))
+                await message.channel.send(embed=discord.Embed(title="Error", description=f"Sorry, ein Fehler ist aufgetreten!", color=0xFF0000))
 
 
 
-client.login(token)
+client.run(token)
