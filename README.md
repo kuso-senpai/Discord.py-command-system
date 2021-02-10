@@ -38,10 +38,10 @@ Die Datei enthält dann alles was man braucht.
 `pass` dann einfach wegmachen und durch den Command Code ersetzen
 
 
-Beispiel:
+__Beispiel:__
 
 **Der erstellte Befehl**
-```
+```python
 from typing import List
 import discord
 
@@ -57,7 +57,7 @@ examples = ["sc"]                                               # Beispiele
 
 **zu**
 
-```
+```python
 from typing import List
 import discord
 
