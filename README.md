@@ -1,7 +1,7 @@
 # Python Command System
 Simples Command System für Discord.py
 
-## How it works
+## wIe FuNkTiOnIeRt DaS??
 Alle Befehle sind in dem `/commands/` Ordner
 
 Ein Befehl ist wie folgt aufgebaut:
