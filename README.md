@@ -5,7 +5,7 @@ Simples Command System für Discord.py
 
 ### Setup
 
-Bevor überhaupt etwas funktioniert, musst du erstmal einen Bot erstellen auf [Der Discord Developers Seite](https://discord.com/developers)
+Bevor überhaupt etwas funktioniert, musst du erstmal einen Bot erstellen auf [der Discord Developers Seite](https://discord.com/developers)
 
 Dort machst du dann alles was du brauchst, lädst den Bot auf einen Server ein und kopierst dann das Token
 
@@ -97,12 +97,12 @@ Ein _help_ Befehl ist schon erstellt
 
 Mit  `help Befehl` werden die Infos über einen Befehl gesendet
 
-![alt text](https://github.com/kuso-senpai/Discord.py-command-system/blob/master/docs/help_command.png?raw=true)
+![](./docs/help_command.png)
 
 
 Mit `help` werden dann einfach alle Befehle angezeigt
 
-![alt text](https://github.com/kuso-senpai/Discord.py-command-system/blob/master/docs/help.png?raw=true)
+![](./docs/help.png)
 
 ## Wie der Hase läuft
 
