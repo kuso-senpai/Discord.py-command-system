@@ -40,7 +40,6 @@ Die Datei enthält dann alles was man braucht.
 
 Beispiel:
 
-
 **Der erstellte Befehl**
 ```
 from typing import List
