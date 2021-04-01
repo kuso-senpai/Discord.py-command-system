@@ -2,6 +2,11 @@
 Einstellungen für den Bot
 """
 
-token = "Token hier"
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+token = os.getenv("TOKEN")
 color = 0x00FFFF
 prefix = "!"

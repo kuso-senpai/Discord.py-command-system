@@ -1,5 +1,6 @@
 # Python Command System
-Simples Command System für Discord.py
+<a href="https://github.com/404kuso/Discord.py-command-system/blob/main/README.md">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=404kuso&repo=Discord.py-command-system&theme=calm&hide_border=true">
 
 ## wIe FuNkTiOnIeRt DaS??
 
@@ -18,7 +19,7 @@ Das Token fügst du dann in `config.py` bei `token = ""` zwischen die `"` ein.
 Alle Befehle sind in dem `/commands/` Ordner
 
 
-Der Bot reagiert auf das Prefix in `config.py` und auf den Benutzer Ping (@Bot)
+Der Bot reagiert auf das Prefix in [`config.py`](./config.py) und auf den Benutzer Ping (@Bot)
 
 Ein Befehl ist wie folgt aufgebaut:
 
@@ -32,7 +33,7 @@ examples = ["Beispiel1", "Beispiel2"]
 alias = ["commandAlias", "commandAlias2"]
 ```
 
-Für mehr Infos, einfach `/commands/sample.py` angucken
+Für mehr Infos, einfach [`/commands/sample.py`](./commands/sample.py) angucken
 
 
 ### Befehl erstellen per Command Line
@@ -106,7 +107,7 @@ Mit `help` werden dann einfach alle Befehle angezeigt
 
 ## Wie der Hase läuft
 
-Das meiste findet in `/modules/botCommands.py` statt. Dort wird einfach durch jede Datei im `/commands` Ordner durchgeguckt.
+Das meiste findet in `/modules/botCommands.py` statt. Dort wird einfach durch jede Datei im `/commands/` Ordner durchgeguckt.
 Es wird dann überprüft, ob der Command Name dem entspricht was gesendet wurde, oder ob das was gesendet wurde in den Aliasen
 von einem Befehl enthalten ist. Wenn ja, wird dann die `main` Funktion aufgerufen und der Code ausgeführt.
 
@@ -114,37 +115,37 @@ von einem Befehl enthalten ist. Wenn ja, wird dann die `main` Funktion aufgerufe
 
 ## Dateien/Ordner Erklärung
 
-### `/`
+### [`/`](./)
 
 Der Ordner in dem das hier alles drinnen ist
 
-#### `index.py`
+#### [`index.py`](./index.py)
 
 Die Datei in dem der Hauptcode vom Bot ist, der zuallererst ausgeführt wird und alles regelt
 
-#### `config.py`
+#### [`config.py`](./config.py)
 
 Hier sind alle Einstellungen wie die Farbe der Embeds, der Prefix und der Token drinnen
 
-#### `REAME.md`
+#### [`README.md`](./README.md)
 
 Das ist das hier was du gerade liest. Diese Datei ist auch nicht relevant für den Bot, sie ist nur für Github wichtig
 
-### `/commands/`
+### [`/commands/`](./commands/)
 
 Das hier ist der Ordner mit den Befehlsdateien. Hier dürfen **nur** Dateien bei denen das Befehlsformat ist drinnen sein
 
-### `/docs/`
+### [`/docs/`](./docs/)
 
 Das ist nur ein Ordner für Github mit Zeugs wie Bildern, etc. drinnen, der ist nicht für den Bot relevant, der kann gelöscht werden
 
 
-### `/modules/`
+###  [`/modules/`](./modules/)
 
 Hier sind alle Module drinnen, die genutzt werden sollen/können
 
 Der Ordner ist einfach nur zur Übersicht da, damit der root Ordner nicht vollgefüllt ist mit irgendwelchen python Modulen
 
-#### `botCommands.py`
+#### [`botCommands.py`](./modules/botCommands.py)
 
 Das ist die Datei, die die Befehle verarbeitet, sucht und so. Die Datei ist **wichtig** für den Bot, daher nicht löschen solange kein anderes Commandsystem vorliegt
