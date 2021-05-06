@@ -10,6 +10,11 @@ Bevor überhaupt etwas funktioniert, musst du erstmal einen Bot erstellen auf [d
 
 Dort machst du dann alles was du brauchst, lädst den Bot auf einen Server ein und kopierst dann das Token
 
+**Hinweis**
+
+Damit der Bot SlashCommands nutzen können, muss bei dem OAuth2 Link `Bot` und `Application.commands` ausgewählt sein
+![](./docs/oauthSlash.png)
+
 Das Token fügst du dann in `config.py` bei `token = ""` zwischen die `"` ein.
 
 
@@ -91,19 +96,6 @@ examples = ["sc"]                                               # Beispiele
 
 Den Bot kann etweder mit `python index.py` gestartet werden oder mit `/tools/run.bat`
 
-
-## Help command
-
-Ein _help_ Befehl ist schon erstellt
-
-Mit  `help Befehl` werden die Infos über einen Befehl gesendet
-
-![](./docs/help_command.png)
-
-
-Mit `help` werden dann einfach alle Befehle angezeigt
-
-![](./docs/help.png)
 
 ## Wie der Hase läuft
 
