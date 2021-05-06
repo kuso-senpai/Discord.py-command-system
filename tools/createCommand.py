@@ -6,7 +6,7 @@
 
 from os import path
 
-default_base = "test"
+default_base = "bot"
 
 base = input("Command Gruppe (enter für standart base): ").lower().replace(" ", "_")
 base = base if base != "" else default_base
