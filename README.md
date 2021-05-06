@@ -6,7 +6,7 @@
 
 ### Setup
 
-Bevor überhaupt etwas funktioniert, musst du erstmal einen Bot erstellen auf [der Discord Developers Seite](https://discord.com/developers)
+Bevor überhaupt etwas funktioniert, musst du erstmal einen Bot erstellen auf [der Discord Developer Seite](https://discord.com/developers)
 
 Dort machst du dann alles was du brauchst, lädst den Bot auf einen Server ein und kopierst dann das Token
 
@@ -24,18 +24,18 @@ Das Token fügst du dann in `config.py` bei `token = ""` zwischen die `"` ein.
 Alle Befehle sind in dem `/commands/` Ordner
 
 
-Der Bot reagiert auf das Prefix in [`config.py`](./config.py) und auf den Benutzer Ping (@Bot)
-
 Ein Befehl ist wie folgt aufgebaut:
 
 ```python
-async def main(message, args, client):
-    # Command code hier
-name = "Command Name"
-desc = "Die Beschreibung vom Befehl"
-usage = "Die (Benutzung) [von dem Command]"
-examples = ["Beispiel1", "Beispiel2"]
-alias = ["commandAlias", "commandAlias2"]
+import discord
+from discord.ext import commands
+from discord_slash import SlashCommand, SlashContext
+
+def register(client: commands.Bot):
+    slash: SlashCommand = client.slash
+    @slash.subcommand(base='bot', name="test", description="Testet den Bot")
+    async def command(ctx: SlashContext):
+        pass
 ```
 
 Für mehr Infos, einfach [`/commands/sample.py`](./commands/sample.py) angucken
@@ -58,41 +58,6 @@ Dann einfach den Anweisungen folgen und eine Datei wird in `/commands/` erstellt
 Die Datei enthält dann alles was man braucht.
 
 `pass` dann einfach wegmachen und durch den Command Code ersetzen
-
-
-__Beispiel:__
-
-**Der erstellte Befehl**
-```python
-from typing import List
-import discord
-
-async def main(message: discord.Message, args: List[str], client: discord.Client):
-    pass
-
-name = "sampleCommand"                                          # Name
-desc = "This is a Sample Command"                               # Beschreibung
-alias = ["sc"]                                                  # Alias
-usage = "sampleCommand"                                         # Benutzung
-examples = ["sc"]                                               # Beispiele
-```
-
-**zu**
-
-```python
-from typing import List
-import discord
-
-async def main(message: discord.Message, args: List[str], client: discord.Client):
-    print("command aufgerufen")
-
-name = "sampleCommand"                                          # Name
-desc = "This is a Sample Command"                               # Beschreibung
-alias = ["sc"]                                                  # Alias
-usage = "sampleCommand"                                         # Benutzung
-examples = ["sc"]                                               # Beispiele
-```
-
 
 Den Bot kann etweder mit `python index.py` gestartet werden oder mit `/tools/run.bat`
 
@@ -130,14 +95,3 @@ Das hier ist der Ordner mit den Befehlsdateien. Hier dürfen **nur** Dateien bei
 ### [`/docs/`](./docs/)
 
 Das ist nur ein Ordner für Github mit Zeugs wie Bildern, etc. drinnen, der ist nicht für den Bot relevant, der kann gelöscht werden
-
-
-###  [`/modules/`](./modules/)
-
-Hier sind alle Module drinnen, die genutzt werden sollen/können
-
-Der Ordner ist einfach nur zur Übersicht da, damit der root Ordner nicht vollgefüllt ist mit irgendwelchen python Modulen
-
-#### [`botCommands.py`](./modules/botCommands.py)
-
-Das ist die Datei, die die Befehle verarbeitet, sucht und so. Die Datei ist **wichtig** für den Bot, daher nicht löschen solange kein anderes Commandsystem vorliegt
