@@ -1,43 +1,30 @@
-"""
-Die Index Datei die als erstes ausgeführt wird
-"""
+import os
+from os import path
 
-
-#region imports
 import discord
-from config import token, prefix
-#endregion
+from discord.ext import commands
+from discord_slash import SlashCommand, SlashContext
 
-client = discord.Client()
+from settings import token
 
+client = commands.Bot(command_prefix=";", help_command=None)
+slash = SlashCommand(client, sync_commands=True, )
+client.slash = slash
 
-@client.event
+@client.listen('on_connect')
+async def on_connect():
+    filePath = f"{path.dirname(path.abspath(__file__))}{path.sep}"
+    
+    for x in [c for c in os.listdir(f"{filePath}/commands/") if c != "__init__.py" and c != "__pycache__"]:
+        try:
+            x = __import__(f"commands.{x.replace('.py', '')}", globals(), locals(), [x])
+            x.register(client)
+            print(f"✅ {x}")
+        except Exception as x:
+            print(f"❌ {x}\n{type(x)}")
+
+@client.listen('on_ready')
 async def on_ready():
-    print("Bot is ready!")
-
-
-@client.event
-async def on_message(message: discord.Message):
-    if(not message.content.startswith(prefix) and not message.content.startswith(f'<@!{client.user.id}>') and not message.content.startswith(f'<@{client.user.id}>')):
-        return
-
-
-    #region command Values
-    messageWithoutPrefix: str = message.content.replace(prefix, "", len(prefix)).replace(f'<@!{client.user.id}> ', "", len(f'<@!{client.user.id}> ')).replace(f'<@{client.user.id}> ', "", len(f'<@{client.user.id}> '))
-    command = messageWithoutPrefix
-    command = command.split()[0] if len(command.split()) > 0 else command
-    args = messageWithoutPrefix.split()[1:]
-    #endregion
-
-    from modules.botCommands import getCommands
-    for c in getCommands():
-        if c.name.lower() == command.lower() or command.lower() in map(lambda x: x.lower(), c.alias):
-            try:
-                await c.main(message, args, client)
-            except Exception as ex:
-                print(ex)
-                await message.channel.send(embed=discord.Embed(title="Error", description=f"Sorry, ein Fehler ist aufgetreten!", color=0xFF0000))
-
-
+    print("Ready")
 
 client.run(token)
