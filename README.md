@@ -2,6 +2,8 @@
 <a href="https://github.com/404kuso/Discord.py-command-system/blob/main/README.md">
     <img src="https://github-readme-stats.vercel.app/api/pin/?username=404kuso&repo=Discord.py-command-system&theme=calm&hide_border=true">
 
+[<= SlashCommands =>](https://github.com/404kuso/Discord.py-command-system/tree/slash)
+
 ## wIe FuNkTiOnIeRt DaS??
 
 ### Setup
