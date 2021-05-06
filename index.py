@@ -5,7 +5,7 @@ import discord
 from discord.ext import commands
 from discord_slash import SlashCommand, SlashContext
 
-from settings import token
+from config import token
 
 client = commands.Bot(command_prefix=";", help_command=None)
 slash = SlashCommand(client, sync_commands=True, )
