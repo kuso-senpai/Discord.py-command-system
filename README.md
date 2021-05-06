@@ -12,7 +12,7 @@ Dort machst du dann alles was du brauchst, lädst den Bot auf einen Server ein u
 
 **Hinweis**
 
-Damit der Bot SlashCommands nutzen können, muss bei dem OAuth2 Link `Bot` und `Application.commands` ausgewählt sein
+Damit der Bot SlashCommands nutzen können, muss bei dem OAuth2 Link `Bot` und `application.commands` ausgewählt sein
 ![](./docs/oauthSlash.png)
 
 Das Token fügst du dann in `config.py` bei `token = ""` zwischen die `"` ein.
