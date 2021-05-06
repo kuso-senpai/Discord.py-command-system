@@ -8,7 +8,7 @@ from os import path
 
 default_base = "test"
 
-base = input("Command Gruppe: (enter für überspringen)").lower().replace(" ", "_")
+base = input("Command Gruppe (enter für standart base): ").lower().replace(" ", "_")
 base = base if base != "" else default_base
 
 name = input("Befehlname: ").lower().replace(" ", "_")
