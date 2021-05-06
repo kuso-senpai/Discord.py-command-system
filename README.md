@@ -64,10 +64,7 @@ Den Bot kann etweder mit `python index.py` gestartet werden oder mit `/tools/run
 
 ## Wie der Hase läuft
 
-Das meiste findet in `/modules/botCommands.py` statt. Dort wird einfach durch jede Datei im `/commands/` Ordner durchgeguckt.
-Es wird dann überprüft, ob der Command Name dem entspricht was gesendet wurde, oder ob das was gesendet wurde in den Aliasen
-von einem Befehl enthalten ist. Wenn ja, wird dann die `main` Funktion aufgerufen und der Code ausgeführt.
-
+Das meiste findet in `index.py` statt. Es wird bevor der Bot richtig "gestartet" wird, einmal durch jeden command in `/commands/` durchgeangen und dieser wird dann als SlashCommand für den Bot registriert.
 
 
 ## Dateien/Ordner Erklärung
